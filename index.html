@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Justin Vance — Principal Digital Product Designer & Creative Technologist</title>
+  <meta name="description" content="Portfolio of Justin Vance. Crafting websites and SaaS digital products that convert, simplify, and scale. 12+ years of lead product design experience.">
+  <meta name="keywords" content="Product Design, UI/UX Designer, SaaS Design, Design Systems, Web Experiences, Creative Direction, Justin Vance">
+  <meta name="author" content="Justin Vance">
+  <meta name="theme-color" content="#090a0d">
+
+  <!-- OpenGraph / Social Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Justin Vance — Principal Digital Product Designer">
+  <meta property="og:description" content="Websites & Digital Products that convert, simplify, and scale.">
+  <meta property="og:image" content="assets/images/kronos.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Justin Vance — Digital Product Designer">
+  <meta name="twitter:description" content="Websites & Digital Products that convert, simplify, and scale.">
+  <meta name="twitter:image" content="assets/images/kronos.jpg">
+
+  <!-- Favicon SVG -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23dfa767'/><text x='50%' y='68%' font-size='60' font-family='sans-serif' font-weight='900' fill='%23090a0d' text-anchor='middle'>J</text></svg>">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/main.css">
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Justin Vance",
+    "jobTitle": "Principal Digital Product Designer",
+    "url": "https://justinvance.design",
+    "sameAs": [
+      "https://github.com",
+      "https://twitter.com",
+      "https://linkedin.com",
+      "https://dribbble.com"
+    ],
+    "knowsAbout": ["Product Design", "Design Systems", "Fintech SaaS", "Generative AI UX", "Creative Direction"]
+  }
+  </script>
+</head>
+<body>
+  <!-- Custom Magnetic Cursor (Disabled on touch) -->
+  <div class="custom-cursor" id="cursorOuter" aria-hidden="true"></div>
+  <div class="custom-cursor-dot" id="cursorDot" aria-hidden="true"></div>
+
+  <!-- Background Canvas & Grid Overlay -->
+  <canvas id="heroCanvas" aria-hidden="true"></canvas>
+  <div class="hero-vignette" aria-hidden="true"></div>
+  <div class="bg-grid-overlay" aria-hidden="true"></div>
+
+  <!-- ==========================================================================
+       TOP STICKY HEADER & STATUS BAR
+       ========================================================================== -->
+  <header class="top-header" id="topHeader">
+    <div class="container top-header-inner">
+      <!-- Brand Logo -->
+      <a href="#hero" class="brand-logo" aria-label="Justin Vance Homepage">
+        <span class="logo-box">J</span>
+        <span>JUSTIN VANCE</span>
+      </a>
+
+      <!-- Status Pill & Live Time -->
+      <div class="header-status" role="status" aria-live="polite">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span>AVAILABLE FOR Q2/Q3 2026</span>
+        <span class="live-time" id="headerClock">15:00:00 UTC</span>
+      </div>
+
+      <!-- Header Utilities -->
+      <div class="header-actions">
+        <!-- Audio Toggle Button -->
+        <button class="icon-btn" id="audioToggleBtn" title="Toggle tactile sound effects" aria-label="Toggle UI sound effects">
+          <svg id="audioIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+          </svg>
+        </button>
+
+        <!-- Theme Accent Switcher Button -->
+        <button class="icon-btn" id="themeCycleBtn" title="Cycle color accent (Amber / Sky / Emerald)" aria-label="Cycle color theme">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+
+        <!-- Direct Email Pill with Copy Toast -->
+        <button class="header-email-btn" id="copyEmailBtn" title="Click to copy email address">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+          </svg>
+          <span>justin.vance.design@gmail.com</span>
+        </button>
+
+        <!-- Mobile Navigation Hamburger -->
+        <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+    <a href="#hero" class="mobile-nav-link" data-mobile-link>Home</a>
+    <a href="#works" class="mobile-nav-link" data-mobile-link>Selected Works</a>
+    <a href="#services" class="mobile-nav-link" data-mobile-link>Services & Skills</a>
+    <a href="#playground" class="mobile-nav-link" data-mobile-link>Design Playground</a>
+    <a href="#process" class="mobile-nav-link" data-mobile-link>Process</a>
+    <a href="#estimator" class="mobile-nav-link" data-mobile-link>Project Estimator</a>
+    <a href="#archive" class="mobile-nav-link" data-mobile-link>Experience & Awards</a>
+    <a href="#contact" class="mobile-nav-link" data-mobile-link>Contact & Inquiries</a>
+    <button class="btn btn-gold" style="margin-top: 1.5rem;" onclick="openContactModal(); closeMobileNav();">
+      Let's Talk ↗
+    </button>
+  </div>
+
+  <main>
+    <!-- ==========================================================================
+         HERO SECTION (DIRECTLY INSPIRED BY INSPIRATION IMAGE)
+         ========================================================================== -->
+    <section class="hero-section" id="hero">
+      <div class="container hero-content">
+        <div class="hero-display">
+          <!-- Row 1: WEBSITES [Badge: 12+ Years] & -->
+          <div class="hero-row hero-row-1">
+            <h1 class="hero-word">WEBSITES</h1>
+            <div class="glass-badge" id="heroBadge1">
+              <span class="badge-stat">12+ YEARS</span>
+              <span class="badge-label">LEAD PRODUCT CRAFT</span>
+            </div>
+            <span class="hero-ampersand">&amp;</span>
+          </div>
+
+          <!-- Row 2: DIGITAL [Bio Card] -->
+          <div class="hero-row hero-row-2">
+            <h1 class="hero-word">DIGITAL</h1>
+            <div class="hero-bio-card">
+              <p>Hey, I'm <strong>Justin</strong>. I design websites and SaaS products that <strong>convert</strong>, <strong>simplify</strong>, and <strong>scale</strong>.</p>
+            </div>
+          </div>
+
+          <!-- Row 3: PRODUCTS [Badge: 180+ Projects] [Scroll Button] -->
+          <div class="hero-row hero-row-3">
+            <h1 class="hero-word">PRODUCTS</h1>
+            <div class="glass-badge" id="heroBadge2">
+              <span class="badge-stat">180+</span>
+              <span class="badge-label">SHIPPED WORLDWIDE</span>
+            </div>
+            <a href="#works" class="hero-scroll-btn" aria-label="Scroll to Selected Works">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <polyline points="19 12 12 19 5 12"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Hero CTAs -->
+        <div class="hero-cta-group">
+          <a href="#works" class="btn btn-primary">
+            <span>Explore Selected Works</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+          </a>
+          <button class="btn btn-secondary" onclick="openContactModal()">
+            <span>Book Discovery Call</span>
+          </button>
+          <a href="#estimator" class="btn btn-secondary">
+            <span>Calculate Project Scope</span>
+          </a>
+        </div>
+
+        <!-- Hero Bottom Meta Strip -->
+        <div class="hero-meta-bar">
+          <div class="hero-meta-left">
+            <span>Pixel by pixel</span>
+            <span>•</span>
+            <span>Crafted with intentionality</span>
+          </div>
+          <div class="hero-meta-right">
+            <a href="#works">
+              <span>Scroll to explore</span>
+              <span>↓</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         STATS & CLIENT MARQUEE BANNER
+         ========================================================================== -->
+    <section class="stats-banner" aria-label="Key Achievements and Clients">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-number">$1.4<span class="accent">B+</span></div>
+            <div class="stat-desc">Client Venture Valuation Generated</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">180<span class="accent">+</span></div>
+            <div class="stat-desc">SaaS Platforms & Web Apps Shipped</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">14<span class="accent">★</span></div>
+            <div class="stat-desc">Awwwards, FWA & Red Dot Recognitions</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">99.4<span class="accent">%</span></div>
+            <div class="stat-desc">On-Time Milestones & Satisfaction</div>
+          </div>
+        </div>
+
+        <!-- Infinite Client Ticker -->
+        <div class="client-marquee" aria-hidden="true">
+          <div class="marquee-track">
+            <span class="client-logo">STRIPE</span>
+            <span class="client-logo">LINEAR</span>
+            <span class="client-logo">VERCEL</span>
+            <span class="client-logo">FIGMA</span>
+            <span class="client-logo">NOTION</span>
+            <span class="client-logo">RAYCAST</span>
+            <span class="client-logo">ARC BROWSER</span>
+            <span class="client-logo">RETOOL</span>
+            <!-- Duplicate for seamless infinite loop -->
+            <span class="client-logo">STRIPE</span>
+            <span class="client-logo">LINEAR</span>
+            <span class="client-logo">VERCEL</span>
+            <span class="client-logo">FIGMA</span>
+            <span class="client-logo">NOTION</span>
+            <span class="client-logo">RAYCAST</span>
+            <span class="client-logo">ARC BROWSER</span>
+            <span class="client-logo">RETOOL</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SELECTED WORKS SECTION (VARIED ASYMMETRIC & CINEMATIC LAYOUTS)
+         ========================================================================== -->
+    <section class="section" id="works">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Curated Case Studies</span>
+          <h2 class="section-title">Crafted with rigor.<br><span class="highlight">Built for scale.</span></h2>
+          <p class="section-desc">A selection of end-to-end digital products, complex SaaS platforms, and interactive experiences designed to drive tangible business metrics.</p>
+        </div>
+
+        <!-- Filter Navigation Pills -->
+        <div class="works-filter-nav" role="tablist" aria-label="Filter portfolio projects">
+          <button class="filter-pill active" data-filter="all" role="tab" aria-selected="true">All Works (4)</button>
+          <button class="filter-pill" data-filter="fintech" role="tab" aria-selected="false">Fintech & Wealth</button>
+          <button class="filter-pill" data-filter="ai" role="tab" aria-selected="false">AI & Creative Tools</button>
+          <button class="filter-pill" data-filter="spatial" role="tab" aria-selected="false">Spatial & 3D Commerce</button>
+          <button class="filter-pill" data-filter="systems" role="tab" aria-selected="false">Design Systems</button>
+        </div>
+
+        <!-- Projects Showcase Container -->
+        <div class="projects-container">
+          <!-- PROJECT 01: KRONOS FINTECH PLATFORM -->
+          <article class="project-feature project-split" data-category="fintech">
+            <div class="project-visual-col">
+              <div class="project-img-wrapper">
+                <img src="assets/images/kronos.jpg" alt="Kronos Wealth Management SaaS Dashboard Interface" class="project-img" loading="lazy">
+                <div class="project-visual-overlay"></div>
+                <div class="visual-controls-badge">
+                  <div class="visual-badge-left">
+                    <span class="visual-badge-dot"></span>
+                    <span class="visual-badge-title">Interactive Yield Analytics Engine</span>
+                  </div>
+                  <span class="tech-chip">WCAG 2.2 AAA</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-info-col">
+              <div>
+                <div class="project-meta-top">
+                  <span class="project-number">PROJECT // 01</span>
+                  <span class="project-year">2025 — 2026</span>
+                </div>
+                <h3 class="project-header-title">Kronos Financial Ecosystem</h3>
+                <p class="project-tagline">Architected a zero-latency wealth management platform for institutional asset managers, replacing legacy tabular workflows with real-time predictive visualization.</p>
+                
+                <!-- Impact Metrics -->
+                <div class="project-metrics-strip">
+                  <div class="metric-box">
+                    <div class="metric-box-val">+$42.8M</div>
+                    <div class="metric-box-lbl">Net New Capital Flow</div>
+                  </div>
+                  <div class="metric-box">
+                    <div class="metric-box-val">+68%</div>
+                    <div class="metric-box-lbl">Advisor Task Velocity</div>
+                  </div>
+                </div>
+
+                <div class="tech-chips">
+                  <span class="tech-chip">Product Strategy</span>
+                  <span class="tech-chip">Information Architecture</span>
+                  <span class="tech-chip">Design Tokens</span>
+                  <span class="tech-chip">React / TypeScript</span>
+                </div>
+              </div>
+
+              <div class="project-action-row">
+                <button class="btn btn-primary" onclick="openCaseStudy('kronos')">
+                  <span>View Case Study</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                </button>
+                <button class="btn btn-secondary" onclick="simulateLiveDemo('Kronos Financial Live Sandbox')">
+                  <span>Simulate Prototype</span>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 02: SYNAPSE AI CREATIVE SUITE (CINEMATIC FULL-WIDTH LAYOUT) -->
+          <article class="project-feature project-cinematic" data-category="ai">
+            <div class="project-cinematic-banner">
+              <img src="assets/images/synapse.jpg" alt="Synapse AI Generative Studio Node Canvas Interface" class="project-img" loading="lazy">
+              <div class="project-visual-overlay"></div>
+              <div class="visual-controls-badge">
+                <div class="visual-badge-left">
+                  <span class="visual-badge-dot" style="background: #a855f7;"></span>
+                  <span class="visual-badge-title">Multi-modal Node Graph & Timeline Canvas</span>
+                </div>
+                <span class="tech-chip">WebGL Accelerated</span>
+              </div>
+            </div>
+
+            <div class="project-cinematic-body">
+              <div>
+                <div class="project-meta-top">
+                  <span class="project-number">PROJECT // 02</span>
+                  <span class="project-year">2025</span>
+                </div>
+                <h3 class="project-header-title">Synapse AI Studio</h3>
+                <p class="project-tagline">Reimagined generative AI video and imagery composition through an infinite canvas node-graph. Built for propmt engineers, VFX supervisors, and digital concept artists.</p>
+                <div class="tech-chips">
+                  <span class="tech-chip">Generative AI UX</span>
+                  <span class="tech-chip">Node Graph Engine</span>
+                  <span class="tech-chip">Infinite Canvas</span>
+                  <span class="tech-chip">Dark Mode System</span>
+                </div>
+              </div>
+
+              <div>
+                <div class="project-metrics-strip" style="margin-bottom: 1.5rem;">
+                  <div class="metric-box">
+                    <div class="metric-box-val">850k+</div>
+                    <div class="metric-box-lbl">Active Pro Creators</div>
+                  </div>
+                  <div class="metric-box">
+                    <div class="metric-box-val">Awwwards</div>
+                    <div class="metric-box-lbl">Site of the Day Winner</div>
+                  </div>
+                </div>
+                <div class="project-action-row">
+                  <button class="btn btn-primary" onclick="openCaseStudy('synapse')">
+                    <span>View Deep Dive</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                  </button>
+                  <button class="btn btn-secondary" onclick="simulateLiveDemo('Synapse AI Node Canvas')">
+                    <span>Inspect Node Graph</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 03: AURA SPATIAL 3D CONFIGURATOR (REVERSED SPLIT LAYOUT) -->
+          <article class="project-feature project-split reversed" data-category="spatial">
+            <div class="project-visual-col">
+              <div class="project-img-wrapper">
+                <img src="assets/images/aura.jpg" alt="Aura Spatial 3D Luxury Lounge Chair Configurator" class="project-img" loading="lazy">
+                <div class="project-visual-overlay"></div>
+                <div class="visual-controls-badge">
+                  <div class="visual-badge-left">
+                    <span class="visual-badge-dot" style="background: #38bdf8;"></span>
+                    <span class="visual-badge-title">Spatial Ray-Traced Real-Time Shaders</span>
+                  </div>
+                  <span class="tech-chip">3D WebGL / WebXR</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-info-col">
+              <div>
+                <div class="project-meta-top">
+                  <span class="project-number">PROJECT // 03</span>
+                  <span class="project-year">2024 — 2025</span>
+                </div>
+                <h3 class="project-header-title">Aura 3D Spatial Commerce</h3>
+                <p class="project-tagline">Created an ultra-luxury spatial 3D product configurator for architectural furniture. Features photorealistic PBR material inspection, real-time spatial dimensions, and instant AR projection.</p>
+                
+                <div class="project-metrics-strip">
+                  <div class="metric-box">
+                    <div class="metric-box-val">+142%</div>
+                    <div class="metric-box-lbl">Session Engagement Time</div>
+                  </div>
+                  <div class="metric-box">
+                    <div class="metric-box-val">-38%</div>
+                    <div class="metric-box-lbl">Return Rate Reduction</div>
+                  </div>
+                </div>
+
+                <div class="tech-chips">
+                  <span class="tech-chip">Three.js / WebGL</span>
+                  <span class="tech-chip">PBR Material Shaders</span>
+                  <span class="tech-chip">Spatial UI</span>
+                  <span class="tech-chip">Luxury E-Commerce</span>
+                </div>
+              </div>
+
+              <div class="project-action-row">
+                <button class="btn btn-primary" onclick="openCaseStudy('aura')">
+                  <span>View Case Study</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                </button>
+                <button class="btn btn-secondary" onclick="simulateLiveDemo('Aura Spatial 3D Experience')">
+                  <span>Launch 3D Viewer</span>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 04: NUCLEUS ENTERPRISE DESIGN SYSTEM -->
+          <article class="project-feature project-split" data-category="systems">
+            <div class="project-visual-col">
+              <div class="project-img-wrapper">
+                <img src="assets/images/nucleus.jpg" alt="Nucleus Multi-Brand Design System Documentation UI" class="project-img" loading="lazy">
+                <div class="project-visual-overlay"></div>
+                <div class="visual-controls-badge">
+                  <div class="visual-badge-left">
+                    <span class="visual-badge-dot" style="background: #34d399;"></span>
+                    <span class="visual-badge-title">Design Tokens & Component Hierarchy</span>
+                  </div>
+                  <span class="tech-chip">Figma Variables</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-info-col">
+              <div>
+                <div class="project-meta-top">
+                  <span class="project-number">PROJECT // 04</span>
+                  <span class="project-year">2024</span>
+                </div>
+                <h3 class="project-header-title">Nucleus Design System</h3>
+                <p class="project-tagline">Engineered an enterprise-grade multi-brand design system serving 18 engineering teams. Unified web, iOS, and Android applications under a single tokenized pipeline.</p>
+                
+                <div class="project-metrics-strip">
+                  <div class="metric-box">
+                    <div class="metric-box-val">420+</div>
+                    <div class="metric-box-lbl">Accessible Components</div>
+                  </div>
+                  <div class="metric-box">
+                    <div class="metric-box-val">-64%</div>
+                    <div class="metric-box-lbl">Handoff Sprint Latency</div>
+                  </div>
+                </div>
+
+                <div class="tech-chips">
+                  <span class="tech-chip">Token Architecture</span>
+                  <span class="tech-chip">Multi-Brand Theming</span>
+                  <span class="tech-chip">Storybook / Stencil</span>
+                  <span class="tech-chip">Figma Plugin Dev</span>
+                </div>
+              </div>
+
+              <div class="project-action-row">
+                <button class="btn btn-primary" onclick="openCaseStudy('nucleus')">
+                  <span>View Case Study</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                </button>
+                <button class="btn btn-secondary" onclick="simulateLiveDemo('Nucleus Design Tokens Inspector')">
+                  <span>Explore Token Suite</span>
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         INTERACTIVE DESIGN LAB & PLAYGROUND
+         ========================================================================== -->
+    <section class="section playground-section" id="playground">
+      <div class="container">
+        <div class="section-header centered">
+          <span class="section-tag">Interactive Design Lab</span>
+          <h2 class="section-title">Tweak the tokens.<br><span class="highlight">Feel the craft.</span></h2>
+          <p class="section-desc">Experience my design system philosophy in real-time. Adjust the interactive controls below to modify the design tokens and watch the UI adapt instantly.</p>
+        </div>
+
+        <div class="playground-shell">
+          <!-- Shell Header -->
+          <div class="playground-header-bar">
+            <div class="playground-window-dots">
+              <span class="win-dot red"></span>
+              <span class="win-dot yellow"></span>
+              <span class="win-dot green"></span>
+            </div>
+            <span class="playground-header-title">DESIGN_TOKENS_INSPECTOR.JSON // LIVE SYNC</span>
+            <span class="tech-chip" style="font-size: 0.7rem;">v3.4.0 ACTIVE</span>
+          </div>
+
+          <div class="playground-grid">
+            <!-- Controls Panel -->
+            <div class="playground-controls-panel">
+              <!-- Color Accent Switcher -->
+              <div class="control-group">
+                <label class="control-label">
+                  <span>Color Accent</span>
+                  <span class="val-display" id="accentLabel">Warm Amber (#dfa767)</span>
+                </label>
+                <div class="theme-swatches">
+                  <button class="theme-swatch-btn active" data-playground-theme="default">
+                    <span class="swatch-color swatch-gold"></span>
+                    <span>Amber</span>
+                  </button>
+                  <button class="theme-swatch-btn" data-playground-theme="cyber">
+                    <span class="swatch-color swatch-cyan"></span>
+                    <span>Sky</span>
+                  </button>
+                  <button class="theme-swatch-btn" data-playground-theme="emerald">
+                    <span class="swatch-color swatch-emerald"></span>
+                    <span>Sage</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Border Radius Slider -->
+              <div class="control-group">
+                <label for="radiusSlider" class="control-label">
+                  <span>Border Radius</span>
+                  <span class="val-display" id="radiusValDisplay">16px</span>
+                </label>
+                <input type="range" id="radiusSlider" class="custom-range" min="4" max="32" value="16">
+              </div>
+
+              <!-- Blur Intensity Slider -->
+              <div class="control-group">
+                <label for="blurSlider" class="control-label">
+                  <span>Glassmorphism Blur</span>
+                  <span class="val-display" id="blurValDisplay">16px</span>
+                </label>
+                <input type="range" id="blurSlider" class="custom-range" min="0" max="36" value="16">
+              </div>
+
+              <!-- Elevation Glow Toggle -->
+              <div class="control-group">
+                <label class="control-label">
+                  <span>Ambient Glow</span>
+                  <span class="val-display" id="glowValDisplay">Active</span>
+                </label>
+                <button class="btn btn-secondary" id="toggleGlowBtn" style="padding: 0.5rem 1rem; font-size: 0.82rem;">
+                  Toggle Glow Effect
+                </button>
+              </div>
+
+              <!-- Reset to Defaults Button -->
+              <button class="btn btn-secondary" id="resetTokensBtn" style="margin-top: auto; font-size: 0.8rem; border-style: dashed;">
+                <span>Reset to Baseline</span>
+              </button>
+            </div>
+
+            <!-- Playground Live Stage -->
+            <div class="playground-stage">
+              <div class="stage-card-preview" id="stageCard">
+                <div class="stage-card-header">
+                  <span class="stage-badge" id="stageCardBadge">High Yield Liquidity</span>
+                  <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted);">LIVE TOKEN PREVIEW</span>
+                </div>
+
+                <div class="stage-metric-val" id="stageMetric">$1,489,200.50</div>
+                <p style="font-size: 0.95rem; margin-bottom: 1.25rem;">Dynamic tokenized interface component responding in real time to CSS variable mutations.</p>
+
+                <!-- Micro Interactive Elements -->
+                <div class="stage-interactive-elements">
+                  <div style="display: flex; gap: 0.75rem;">
+                    <button class="btn btn-gold" id="sampleInteractiveBtn" style="flex: 1; padding: 0.7rem 1.2rem; font-size: 0.88rem;">
+                      Primary Trigger
+                    </button>
+                    <button class="btn btn-secondary" style="flex: 1; padding: 0.7rem 1.2rem; font-size: 0.88rem;" onclick="toast('Sample secondary action triggered')">
+                      Secondary
+                    </button>
+                  </div>
+
+                  <div style="display: flex; align-items: center; justify-content: space-between; padding-top: 1rem; border-top: 1px solid var(--border-subtle);">
+                    <span style="font-size: 0.85rem; color: var(--text-secondary);">Interactive Switcher</span>
+                    <input type="checkbox" checked id="sampleCheckbox" style="accent-color: var(--accent-gold); width: 18px; height: 18px; cursor: pointer;">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SERVICES & CAPABILITIES SECTION
+         ========================================================================== -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Core Disciplines</span>
+          <h2 class="section-title">High-impact execution.<br><span class="highlight">From 0 to 1 and beyond.</span></h2>
+          <p class="section-desc">Partnering with founders and product leaders to turn ambiguous product questions into market-leading digital experiences.</p>
+        </div>
+
+        <div class="services-grid">
+          <!-- Service 01 -->
+          <div class="service-card">
+            <span class="service-num">01 // PRODUCT STRATEGY & SCOPING</span>
+            <h3 class="service-title">Product Strategy & UX Architecture</h3>
+            <p class="service-desc">Transforming complex business logic into effortless human workflows. Information architecture, competitive differentiation, and MVP prioritization designed to find product-market fit fast.</p>
+            <ul class="service-list">
+              <li>User Research & Qualitative Customer Interviews</li>
+              <li>Information Architecture & Journey Mapping</li>
+              <li>MVP Scoping & Feature Prioritization Matrix</li>
+              <li>Competitive Moats & Product Positioning</li>
+            </ul>
+          </div>
+
+          <!-- Service 02 -->
+          <div class="service-card">
+            <span class="service-num">02 // DESIGN SYSTEMS & TOKENS</span>
+            <h3 class="service-title">Design Systems & Multi-Brand Architecture</h3>
+            <p class="service-desc">Building resilient, scalable component ecosystems. Designed with strict accessibility standards, Figma variables, code parity, and automated documentation.</p>
+            <ul class="service-list">
+              <li>Figma Variables & Semantic Token Architecture</li>
+              <li>WCAG 2.2 AAA Accessibility Audit & Polish</li>
+              <li>Developer Handoff Kits & Storybook Integration</li>
+              <li>Component Versioning & Governance Protocols</li>
+            </ul>
+          </div>
+
+          <!-- Service 03 -->
+          <div class="service-card">
+            <span class="service-num">03 // IMMERSIVE EXPERIENCES</span>
+            <h3 class="service-title">Creative Direction & 3D Web Experiences</h3>
+            <p class="service-desc">Elevating digital brands into unforgettable sensory journeys. Kinetic typography, bespoke WebGL shaders, micro-interactions, and visual storytelling that commands industry attention.</p>
+            <ul class="service-list">
+              <li>Creative Art Direction & Brand Identity Systems</li>
+              <li>WebGL, Three.js & Shader Prototyping</li>
+              <li>Scroll-Driven Motion Design & Choreography</li>
+              <li>High-Conversion Launch Landing Pages</li>
+            </ul>
+          </div>
+
+          <!-- Service 04 -->
+          <div class="service-card">
+            <span class="service-num">04 // FRONT-END PROTOTYPING</span>
+            <h3 class="service-title">Interactive Prototyping & Front-End QA</h3>
+            <p class="service-desc">Closing the gap between design and engineering. Writing production-grade HTML/CSS/JS, building high-fidelity clickable code prototypes, and conducting pixel-level implementation audits.</p>
+            <ul class="service-list">
+              <li>High-Fidelity Code Prototypes in React / HTML5</li>
+              <li>Performance & Core Web Vitals Optimization</li>
+              <li>Pixel-Perfect Design Quality Assurance (QA)</li>
+              <li>Micro-Interaction Tuning & Sound Synthesis</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         HOW WE WORK (PROCESS TIMELINE)
+         ========================================================================== -->
+    <section class="section" id="process">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Methodology</span>
+          <h2 class="section-title">Transparent, agile, &amp;<br><span class="highlight">obsessively iterative.</span></h2>
+          <p class="section-desc">A refined 4-stage process refined over 12+ years and 180+ project launches worldwide.</p>
+        </div>
+
+        <div class="process-timeline">
+          <!-- Step 1 -->
+          <div class="process-step-card">
+            <div class="process-step-num">01</div>
+            <h3 class="process-step-title">Discover &amp; Audit</h3>
+            <p class="process-step-desc">Deep-dive discovery sprint. We analyze user friction, audit existing UI architecture, align on strategic OKRs, and define success metrics.</p>
+            <div class="process-deliverables">
+              <div class="deliverables-title">Deliverables</div>
+              <div class="deliverables-text">UX Audit Report • Strategic Brief • Project Roadmap</div>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="process-step-card">
+            <div class="process-step-num">02</div>
+            <h3 class="process-step-title">Wireframe &amp; Wire</h3>
+            <p class="process-step-desc">Rapid low-fidelity prototyping to validate core interaction loops and structural hierarchy before investing in visual styling.</p>
+            <div class="process-deliverables">
+              <div class="deliverables-title">Deliverables</div>
+              <div class="deliverables-text">User Flow Diagrams • Clickable Wireframes • Architecture</div>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="process-step-card">
+            <div class="process-step-num">03</div>
+            <h3 class="process-step-title">High-Fi Craft</h3>
+            <p class="process-step-desc">Crafting the visual identity, tokens, typography, dark/light themes, micro-interactions, and responsive layouts down to the pixel.</p>
+            <div class="process-deliverables">
+              <div class="deliverables-title">Deliverables</div>
+              <div class="deliverables-text">Complete Figma Specs • Motion Prototypes • Design Tokens</div>
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="process-step-card">
+            <div class="process-step-num">04</div>
+            <h3 class="process-step-title">Launch &amp; Scale</h3>
+            <p class="process-step-desc">Paired developer handoff, design QA tickets, responsive cross-browser testing, and post-launch analytics monitoring to optimize conversion.</p>
+            <div class="process-deliverables">
+              <div class="deliverables-title">Deliverables</div>
+              <div class="deliverables-text">Design QA Checklist • Dev Specs • Optimization Playbook</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         TESTIMONIALS SLIDER SECTION
+         ========================================================================== -->
+    <section class="section testimonials-section" id="testimonials">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Endorsements</span>
+          <h2 class="section-title">What founders &amp;<br><span class="highlight">product leaders say.</span></h2>
+        </div>
+
+        <div class="testimonial-carousel">
+          <div class="testimonial-card-main" id="testimonialCard">
+            <div class="testimonial-quote-mark">“</div>
+            <p class="testimonial-text" id="testimonialQuote">
+              "Justin completely transformed our wealth platform. In just 8 weeks, he took our dense financial tools and turned them into a stunning, intuitive experience that drove a 68% boost in user velocity and helped us close our $30M Series B."
+            </p>
+
+            <div class="testimonial-author-row">
+              <div class="author-meta">
+                <div class="author-avatar" id="testimonialAvatar">AR</div>
+                <div>
+                  <div class="author-name" id="testimonialName">Alexander Reynolds</div>
+                  <div class="author-role" id="testimonialRole">VP of Product, Kronos Capital</div>
+                </div>
+              </div>
+
+              <!-- Controls -->
+              <div class="carousel-controls">
+                <button class="carousel-btn" id="prevTestimonialBtn" aria-label="Previous Testimonial">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+                </button>
+                <button class="carousel-btn" id="nextTestimonialBtn" aria-label="Next Testimonial">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         INTERACTIVE PROJECT SCOPE & COST ESTIMATOR
+         ========================================================================== -->
+    <section class="section" id="estimator">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Transparent Scoping</span>
+          <h2 class="section-title">Project Scope &amp;<br><span class="highlight">Investment Estimator.</span></h2>
+          <p class="section-desc">Select your project parameters to receive an instant timeline and budget ballpark before we hop on our discovery call.</p>
+        </div>
+
+        <div class="estimator-card">
+          <!-- Options Form -->
+          <div class="estimator-options">
+            <!-- Project Type -->
+            <div>
+              <div class="estimator-group-title">01 // Project Engagement Type</div>
+              <div class="estimator-chips" id="estScopeGroup">
+                <button class="estimate-chip active" data-type="scope" data-val="saas" data-cost="16000" data-time="6">SaaS Web Application</button>
+                <button class="estimate-chip" data-type="scope" data-val="brand-web" data-cost="12000" data-time="4">Brand &amp; Marketing Site</button>
+                <button class="estimate-chip" data-type="scope" data-val="design-system" data-cost="14000" data-time="5">Design System &amp; Tokens</button>
+                <button class="estimate-chip" data-type="scope" data-val="relaunch" data-cost="22000" data-time="8">Full Product Overhaul</button>
+              </div>
+            </div>
+
+            <!-- Company Scale -->
+            <div>
+              <div class="estimator-group-title">02 // Company Stage &amp; Complexity</div>
+              <div class="estimator-chips" id="estScaleGroup">
+                <button class="estimate-chip" data-type="scale" data-mult="1.0">Early-Stage Seed MVP</button>
+                <button class="estimate-chip active" data-type="scale" data-mult="1.35">Growth / Series A-C</button>
+                <button class="estimate-chip" data-type="scale" data-mult="1.8">Enterprise / Multi-Brand</button>
+              </div>
+            </div>
+
+            <!-- Delivery Pace -->
+            <div>
+              <div class="estimator-group-title">03 // Desired Delivery Pace</div>
+              <div class="estimator-chips" id="estSpeedGroup">
+                <button class="estimate-chip active" data-type="speed" data-mult="1.0">Standard Cadence</button>
+                <button class="estimate-chip" data-type="speed" data-mult="1.25">Accelerated Sprint</button>
+              </div>
+            </div>
+
+            <!-- Optional Add-ons -->
+            <div>
+              <div class="estimator-group-title">04 // High-Craft Add-ons (Optional)</div>
+              <div class="estimator-chips" id="estAddonsGroup">
+                <button class="estimate-chip" data-type="addon" data-cost="4000">Interactive WebGL / 3D Canvas</button>
+                <button class="estimate-chip" data-type="addon" data-cost="3500">React Code Prototyping</button>
+                <button class="estimate-chip" data-type="addon" data-cost="2500">WCAG 2.2 AAA Audit &amp; Specs</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Summary Panel -->
+          <div class="estimator-summary-panel">
+            <div>
+              <div class="est-summary-label">Estimated Investment</div>
+              <div class="est-price-range" id="estPriceDisplay">$21,600 – $27,000</div>
+              <div class="est-duration" id="estTimeDisplay">Estimated Timeline: 6–8 Weeks</div>
+
+              <ul class="est-features-list">
+                <li>Direct collaboration with Justin (Zero agency middle-men)</li>
+                <li>Weekly sprint deliveries &amp; async Loom reviews</li>
+                <li>Figma files with full token library &amp; documentation</li>
+                <li>Interactive responsive web prototypes</li>
+                <li>100% intellectual property ownership transfer</li>
+              </ul>
+            </div>
+
+            <button class="btn btn-gold" id="inquireConfigBtn" style="width: 100%;">
+              <span>Inquire with this Scope ↗</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         AWARDS & ARCHIVE SECTION
+         ========================================================================== -->
+    <section class="section" id="archive">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Recognition &amp; Milestones</span>
+          <h2 class="section-title">Industry awards &amp;<br><span class="highlight">past achievements.</span></h2>
+        </div>
+
+        <div class="archive-table">
+          <div class="archive-row" onclick="toast('Awwwards Site of the Day — Synapse AI')">
+            <span class="archive-year">2025</span>
+            <span class="archive-name">Synapse AI Studio</span>
+            <span class="archive-category">Generative AI Platform</span>
+            <span class="archive-honor">Site of the Day ★</span>
+          </div>
+
+          <div class="archive-row" onclick="toast('FWA of the Month — Aura Spatial')">
+            <span class="archive-year">2025</span>
+            <span class="archive-name">Aura 3D Spatial</span>
+            <span class="archive-category">Spatial Computing WebApp</span>
+            <span class="archive-honor">FWA of the Month ★</span>
+          </div>
+
+          <div class="archive-row" onclick="toast('Fast Company Innovation Award — Kronos')">
+            <span class="archive-year">2024</span>
+            <span class="archive-name">Kronos Wealth Systems</span>
+            <span class="archive-category">Fintech Architecture</span>
+            <span class="archive-honor">Fast Company Award ★</span>
+          </div>
+
+          <div class="archive-row" onclick="toast('Design Week Best Digital Product — Nucleus')">
+            <span class="archive-year">2023</span>
+            <span class="archive-name">Nucleus Design Tokens</span>
+            <span class="archive-category">Multi-Brand Architecture</span>
+            <span class="archive-honor">Best Product Design ★</span>
+          </div>
+
+          <div class="archive-row" onclick="toast('Red Dot Best of the Best — Vector Cloud')">
+            <span class="archive-year">2022</span>
+            <span class="archive-name">Vector Cloud Analytics</span>
+            <span class="archive-category">Enterprise Dashboard</span>
+            <span class="archive-honor">Red Dot Best of the Best ★</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         FAQ SECTION
+         ========================================================================== -->
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-header centered">
+          <span class="section-tag">Frequently Asked Questions</span>
+          <h2 class="section-title">Everything you need to know<br><span class="highlight">about working together.</span></h2>
+        </div>
+
+        <div class="faq-container">
+          <!-- FAQ 1 -->
+          <div class="faq-item open">
+            <button class="faq-trigger" aria-expanded="true">
+              <span>What makes working with you different from hiring an agency?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-body" style="max-height: 200px;">
+              <div class="faq-content">
+                When you hire an agency, your project is typically pitched by senior directors but handed off to junior designers. Working with me means 100% of your product design, architecture, and interaction craft is executed personally by a principal designer with 12+ years of high-growth experience. Faster execution, zero bureaucracy, and surgical precision.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span>What is your typical project timeline?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-body">
+              <div class="faq-content">
+                Standard SaaS product design engagements generally run between 4 to 8 weeks depending on scope, state complexity, and deliverables. For fast-moving startups looking to launch an MVP or redesign a core funnel, accelerated 3-week design sprints are also available.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span>Do you handle development or design only?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-body">
+              <div class="faq-content">
+                While my primary discipline is product design and design systems, I build production-ready front-end code prototypes (React, HTML5, CSS3, WebGL, TypeScript). I also conduct hands-on paired engineering handoffs and design QA to ensure the shipped product matches the Figma specification down to the exact sub-pixel.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span>How do you handle confidentiality and NDAs?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-body">
+              <div class="faq-content">
+                I regularly work with stealth venture-backed startups and publicly traded corporations. I am more than happy to sign a mutual NDA prior to our first deep-dive discovery call, and all project files and intellectual property remain 100% your proprietary assets.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         CONTACT SECTION & ON-PAGE INQUIRY
+         ========================================================================== -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-info-col">
+            <div>
+              <span class="section-tag">Start a Collaboration</span>
+              <h2 class="section-title">Let's craft something<br><span class="highlight">truly remarkable.</span></h2>
+              <p class="section-desc" style="margin-bottom: 2rem;">
+                Currently accepting selective projects for Q2/Q3 2026. Whether you need a ground-up SaaS product, a high-converting web presence, or a bulletproof design system, let's talk.
+              </p>
+
+              <div style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2rem;">
+                <div style="display: flex; align-items: center; gap: 0.75rem;">
+                  <span class="status-dot"></span>
+                  <span style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-hero);">Avg. Response Time: &lt; 4 Hours</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.75rem;">
+                  <span style="color: var(--accent-gold); font-size: 1.1rem;">📍</span>
+                  <span style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-secondary);">Available Worldwide (SF / NYC / Tokyo Timezone friendly)</span>
+                </div>
+              </div>
+            </div>
+
+            <div style="padding-top: 1.5rem; border-top: 1px solid var(--border-subtle);">
+              <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;">Direct Line</span>
+              <p style="font-size: 1.25rem; font-weight: 700; color: var(--text-hero); margin-top: 0.25rem;">
+                justin.vance.design@gmail.com
+              </p>
+            </div>
+          </div>
+
+          <!-- Interactive Contact Form -->
+          <div class="contact-card">
+            <form id="contactForm" novalidate>
+              <div class="form-group" id="groupName">
+                <label for="contactName" class="form-label">Your Name or Company *</label>
+                <input type="text" id="contactName" class="form-input" placeholder="e.g. Sarah Chen, Kronos Capital" required>
+                <div class="form-error-msg">Please enter your name or company.</div>
+              </div>
+
+              <div class="form-group" id="groupEmail">
+                <label for="contactEmail" class="form-label">Email Address *</label>
+                <input type="email" id="contactEmail" class="form-input" placeholder="sarah@kronos.com" required>
+                <div class="form-error-msg">Please provide a valid business email.</div>
+              </div>
+
+              <div class="form-group">
+                <label for="contactScope" class="form-label">Primary Interest</label>
+                <select id="contactScope" class="form-select">
+                  <option value="saas">SaaS Digital Product Design</option>
+                  <option value="brand">High-Craft Website & WebGL</option>
+                  <option value="design-system">Enterprise Design System</option>
+                  <option value="audit">Design Audit & UX Sprint</option>
+                </select>
+              </div>
+
+              <div class="form-group" id="groupMessage">
+                <label for="contactMessage" class="form-label">Project Brief &amp; Goals *</label>
+                <textarea id="contactMessage" class="form-textarea" placeholder="Tell me about your product, timeline, and what success looks like..." required></textarea>
+                <div class="form-error-msg">Please share a brief note about your project.</div>
+              </div>
+
+              <button type="submit" class="btn btn-gold" id="contactSubmitBtn" style="width: 100%; padding: 1rem;">
+                <span id="submitBtnText">Send Project Inquiry ↗</span>
+                <span id="submitSpinner" style="display: none;">Sending...</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       FLOATING BOTTOM DOCK NAVIGATION (DIRECT COMPOSITION MATCH)
+       ========================================================================== -->
+  <nav class="floating-dock-container" aria-label="Quick Navigation Dock">
+    <div class="floating-dock">
+      <a href="#works" class="dock-link active" data-dock-link="works">PROJECTS</a>
+      <a href="#services" class="dock-link" data-dock-link="services">SERVICES</a>
+      <a href="#playground" class="dock-link" data-dock-link="playground">LAB</a>
+      <a href="#process" class="dock-link" data-dock-link="process">PROCESS</a>
+      <a href="#estimator" class="dock-link" data-dock-link="estimator">ESTIMATE</a>
+      <button class="dock-cta" onclick="openContactModal()" aria-label="Open contact form">
+        <span class="dock-cta-avatar">JV</span>
+        <span>LET'S TALK</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-big-cta">
+        LET'S BUILD SOMETHING<br><span style="color: var(--accent-gold);">EXTRAORDINARY.</span>
+      </div>
+
+      <div class="footer-grid">
+        <div>
+          <div class="brand-logo" style="margin-bottom: 1.25rem;">
+            <span class="logo-box">J</span>
+            <span>JUSTIN VANCE</span>
+          </div>
+          <p style="font-size: 0.95rem; max-width: 320px; margin-bottom: 1.5rem;">
+            Principal Digital Product Designer. Available for select contract design leadership, SaaS product architecture, and WebGL experiences worldwide.
+          </p>
+          <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted);">
+            © 2026 Justin Vance. All rights reserved.
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Navigation</div>
+          <ul class="footer-links">
+            <li><a href="#works">Selected Projects</a></li>
+            <li><a href="#services">Services &amp; Capabilities</a></li>
+            <li><a href="#playground">Interactive Token Lab</a></li>
+            <li><a href="#process">Design Methodology</a></li>
+            <li><a href="#estimator">Scope &amp; Cost Estimator</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Network &amp; Social</div>
+          <ul class="footer-links">
+            <li><a href="https://twitter.com" target="_blank" rel="noopener">X / Twitter ↗</a></li>
+            <li><a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+            <li><a href="https://github.com" target="_blank" rel="noopener">GitHub ↗</a></li>
+            <li><a href="https://dribbble.com" target="_blank" rel="noopener">Dribbble ↗</a></li>
+            <li><a href="https://read.cv" target="_blank" rel="noopener">ReadCV ↗</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Global Hubs</div>
+          <ul class="footer-links" style="font-family: var(--font-mono); font-size: 0.85rem;">
+            <li><span>San Francisco</span> <span style="color: var(--text-muted);" id="clockSF">07:00 PST</span></li>
+            <li><span>New York</span> <span style="color: var(--text-muted);" id="clockNYC">10:00 EST</span></li>
+            <li><span>London</span> <span style="color: var(--text-muted);" id="clockLDN">15:00 GMT</span></li>
+            <li><span>Tokyo</span> <span style="color: var(--text-muted);" id="clockTYO">23:00 JST</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <div>Handcrafted with pure HTML5, Vanilla CSS &amp; ES6 JavaScript. Zero heavy dependencies.</div>
+        <a href="#hero" style="color: var(--accent-gold); display: inline-flex; align-items: center; gap: 0.35rem;">
+          <span>Back to Top</span>
+          <span>↑</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       CASE STUDY DETAIL MODAL
+       ========================================================================== -->
+  <div class="modal-overlay" id="caseStudyModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-container">
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close Case Study Modal">✕</button>
+      <div class="modal-content" id="modalDynamicContent">
+        <!-- Content will be injected dynamically via JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       TOAST NOTIFICATION CONTAINER
+       ========================================================================== -->
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+  <!-- JavaScript Application -->
+  <script src="js/app.js"></script>
+</body>
+</html>
